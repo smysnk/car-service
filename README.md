@@ -5,11 +5,11 @@
 
 ## Running
 
-`./gradlew run`
+`$ ./gradlew run`
 
 ### Retrieving Service record
 
-`curl -i -H "Content-Type: application/json" -X GET http://localhost:8080/service-record/1`
+`$ curl -i -H "Content-Type: application/json" -X GET http://localhost:8080/service-record/1`
 
 ```
 {
@@ -39,7 +39,7 @@
 ```
 
 ### Retrieving Customer
-`curl -i -H "Content-Type: application/json" -X GET http://localhost:8080/customer/1`
+`$ curl -i -H "Content-Type: application/json" -X GET http://localhost:8080/customer/1`
 
 ```
 {
@@ -90,7 +90,7 @@
 ```
 
 ### Retrieving Car
-`curl -i -H "Content-Type: application/json" -X GET http://localhost:8080/car/1`
+`$ curl -i -H "Content-Type: application/json" -X GET http://localhost:8080/car/1`
 
 ```
 {
