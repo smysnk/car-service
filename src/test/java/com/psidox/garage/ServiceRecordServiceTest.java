@@ -55,6 +55,7 @@ public class ServiceRecordServiceTest {
 
 	}
 
+	@Test
 	public void shouldAllowOilChangeForGas() throws Exception {
 
 		// Get a gas car
@@ -66,6 +67,7 @@ public class ServiceRecordServiceTest {
 
 	}
 
+	@Test
 	public void shouldAllowOilChangeForHybrid() throws Exception {
 
 		// Get a hybrid car
@@ -90,6 +92,7 @@ public class ServiceRecordServiceTest {
 	}
 
 
+	@Test
 	public void shouldAllowSparkplugChangeForGas() throws Exception {
 
 		// Get a electric car
