@@ -45,7 +45,7 @@ public class ServiceRecordServiceTest {
 	@Test
 	public void shouldAddWithoutException() throws Exception {
 
-		ServiceRecord serviceRecord = serviceRecordService.addServiceRecord(1, 1, 1000, true, true, true);
+		ServiceRecord serviceRecord = serviceRecordService.add(1, 1, 1000, true, true, true);
 		assertEquals(serviceRecord.isServiceOilChanged(), true);
 		assertEquals(serviceRecord.isServiceTireRotated(), true);
 		assertEquals(serviceRecord.isServiceSparkPlugsChanged(), true);
@@ -63,7 +63,7 @@ public class ServiceRecordServiceTest {
 		assertEquals(car.getCarModel().getCarType().getName(), "Gas");
 		assertEquals(car.getCarModel().getCarType().hasOil(), true);
 
-		serviceRecordService.addServiceRecord(1, car.getId(), 1000, true, false, false);
+		serviceRecordService.add(1, car.getId(), 1000, true, false, false);
 
 	}
 
@@ -76,7 +76,7 @@ public class ServiceRecordServiceTest {
 		assertEquals(car.getCarModel().getCarType().getName(), "Diesel");
 		assertEquals(car.getCarModel().getCarType().hasOil(), true);
 
-		serviceRecordService.addServiceRecord(1, car.getId(), 1000, true, false, false);
+		serviceRecordService.add(1, car.getId(), 1000, true, false, false);
 
 	}
 
@@ -88,7 +88,7 @@ public class ServiceRecordServiceTest {
 		assertEquals(car.getCarModel().getCarType().getName(), "Hybrid");
 		assertEquals(car.getCarModel().getCarType().hasOil(), true);
 
-		serviceRecordService.addServiceRecord(1, car.getId(), 1000, true, false, false);
+		serviceRecordService.add(1, car.getId(), 1000, true, false, false);
 
 	}
 
@@ -101,7 +101,7 @@ public class ServiceRecordServiceTest {
 		assertEquals(car.getCarModel().getCarType().getName(), "Electric");
 		assertEquals(car.getCarModel().getCarType().hasOil(), false);
 
-		serviceRecordService.addServiceRecord(1, car.getId(), 1000, true, false, false);
+		serviceRecordService.add(1, car.getId(), 1000, true, false, false);
 
 	}
 
@@ -114,7 +114,7 @@ public class ServiceRecordServiceTest {
 		assertEquals(car.getCarModel().getCarType().getName(), "Gas");
 		assertEquals(car.getCarModel().getCarType().hasSparkplugs(), true);
 
-		serviceRecordService.addServiceRecord(1, car.getId(), 1000, false, false, true);
+		serviceRecordService.add(1, car.getId(), 1000, false, false, true);
 
 	}
 
@@ -126,7 +126,7 @@ public class ServiceRecordServiceTest {
 		assertEquals(car.getCarModel().getCarType().getName(), "Hybrid");
 		assertEquals(car.getCarModel().getCarType().hasSparkplugs(), true);
 
-		serviceRecordService.addServiceRecord(1, car.getId(), 1000, false, false, true);
+		serviceRecordService.add(1, car.getId(), 1000, false, false, true);
 
 	}
 
@@ -137,7 +137,7 @@ public class ServiceRecordServiceTest {
 		Car car = carRepository.findOne(4L);
 		assertEquals(car.getCarModel().getCarType().getName(), "Electric");
 
-		serviceRecordService.addServiceRecord(1, car.getId(), 1000, false, false, true);
+		serviceRecordService.add(1, car.getId(), 1000, false, false, true);
 
 	}
 
@@ -148,7 +148,7 @@ public class ServiceRecordServiceTest {
 		Car car = carRepository.findOne(2L);
 		assertEquals(car.getCarModel().getCarType().getName(), "Diesel");
 
-		serviceRecordService.addServiceRecord(1, car.getId(), 1000, false, false, true);
+		serviceRecordService.add(1, car.getId(), 1000, false, false, true);
 
 	}
 
@@ -160,7 +160,7 @@ public class ServiceRecordServiceTest {
 		Customer customer = customerRepository.findOne(1L);
 		assertNotEquals(car.getCustomer(), customer);
 
-		serviceRecordService.addServiceRecord(customer.getId(), car.getId(), 1000, false, false, true);
+		serviceRecordService.add(customer.getId(), car.getId(), 1000, false, false, true);
 
 	}
 

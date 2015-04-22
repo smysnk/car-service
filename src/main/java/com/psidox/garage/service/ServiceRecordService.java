@@ -27,11 +27,26 @@ public class ServiceRecordService {
     @Autowired
     private ServiceRecordRepository serviceRecordRepository;
 
-    public List<ServiceRecord> getServiceRecords() {
+    public List<ServiceRecord> getAll() {
+
         return this.serviceRecordRepository.findAll();
+
     }
 
-    public ServiceRecord addServiceRecord(long customerId, long carId, int odometerReading, boolean oilChanged, boolean tireRoated, boolean sparkplugsChanged) throws Exception {
+    public ServiceRecord getOne(long serviceRecordId) {
+
+        return this.serviceRecordRepository.findOne(serviceRecordId);
+
+    }
+
+    public void delete(long serviceRecordId) {
+
+        ServiceRecord serviceRecord = this.serviceRecordRepository.findOne(serviceRecordId);
+        this.serviceRecordRepository.delete(serviceRecord);
+
+    }
+
+    public ServiceRecord add(long customerId, long carId, int odometerReading, boolean oilChanged, boolean tireRoated, boolean sparkplugsChanged) throws Exception {
 
         ServiceRecord serviceRecord = new ServiceRecord();
         Car car = carRepository.findOne(carId);
