@@ -126,7 +126,7 @@ public class ServiceRecordServiceTest {
 	@Test(expected = ExceptionNotOwner.class)
 	public void shouldNotAllowAddingCarToWrongCustomer() throws Exception {
 
-		// Get a car that owns to somebody else
+		// Get a car that belongs to somebody else
 		Car car = carRepository.findOne(5L);
 		Customer customer = customerRepository.findOne(1L);
 		assertNotEquals(car.getCustomer(), customer);
