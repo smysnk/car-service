@@ -3,11 +3,17 @@
 declare var require:any;
 import angular = require('angular');
 import ModuleBuilder = require('./lib/ModuleBuilder');
+
+// Load angular modules
 require('angular-ui-router');
 require('./templates');
 
+// Wire up Traverson
+//var traverson = require('traverson');
+var traversonAngular = require('traverson-angular');
 
-var appBuilder = new ModuleBuilder('amt', ['ui.router', 'templates']);
+// Main app builder
+var appBuilder = new ModuleBuilder('amt', ['ui.router', 'templates', traversonAngular.name]);
 
 // Wire up or modules
 require('./component/component.module')(appBuilder);

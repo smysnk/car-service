@@ -12,3 +12,4 @@ public interface ServiceRecordRepository extends PagingAndSortingRepository<Serv
     ServiceRecord findById(long id);
 
 }
+s

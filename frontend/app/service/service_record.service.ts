@@ -2,6 +2,7 @@
 
 declare var require:any;
 import ServiceRecord = require('../model/service_record.model');
+var JsonHalAdapter = require('traverson-hal');
 
 class ServiceRecordService {
 
@@ -12,6 +13,29 @@ class ServiceRecordService {
 
     public static initailize(mod: angular.IModule) {
         mod.service('$serviceRecord', ServiceRecordService);
+    }
+
+    public static $inject = [
+        'traverson'
+    ];
+
+    constructor(traverson) {
+
+        traverson.registerMediaType(JsonHalAdapter.mediaType, JsonHalAdapter);
+
+        traverson
+            .from('http://localhost:9000/api/')
+            .newRequest()
+            .follow('serviceRecords')
+                .getResource()
+                .result
+                .then(function(document) {
+                    console.log('We have followed the path and reached our destination.')
+                    console.log(JSON.stringify(document))
+                }, function(err) {
+                    console.error(err, 'No luck');
+                });
+
     }
 
     /**

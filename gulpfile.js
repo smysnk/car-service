@@ -165,18 +165,11 @@ gulp.task('connect', function () {
                     var proxy, url;
                     url = require('url');
                     proxy = require('proxy-middleware');
-                    options = url.parse('http://localhost:8080/service/api');
+                    options = url.parse('http://localhost:8080/api');
                     options.route = '/api';
+                    options.headers = { 'X-Forwarded-Host': 'localhost:9000' };
                     return proxy(options);
-                })(), 
-                (function () {
-                    var proxy, url;
-                    url = require('url');
-                    proxy = require('proxy-middleware');
-                    options = url.parse('http://localhost:8080/service/images');
-                    options.route = '/images';
-                    return proxy(options);
-                })(), 
+                })(),
                 historyApiFallback
             ];
         }

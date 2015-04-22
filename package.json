@@ -48,7 +48,10 @@
     ]
   },
   "browser": {
-    "angular-ui-router": "./frontend/bower_components/angular-ui-router/release/angular-ui-router.js"
+    "angular-ui-router": "./frontend/bower_components/angular-ui-router/release/angular-ui-router.js",
+    "traverson":         "./frontend/bower_components/traverson/browser/dist/traverson.js",
+    "traverson-angular": "./frontend/bower_components/traverson-angular/browser/dist/traverson-angular.js",
+    "traverson-hal":     "./frontend/bower_components/traverson-hal/browser/dist/traverson-hal.js"
   },
   "browserify-shim": {
     "angular": "global:angular"

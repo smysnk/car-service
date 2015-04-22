@@ -8,7 +8,10 @@
     "bootstrap": "~3.3.2",
     "restangular": "~1.4.0",
     "lodash": "~3.4.0",
-    "font-awesome": "~4.3.0"
+    "font-awesome": "~4.3.0",
+    "traverson-angular": "~2.1.0",
+    "traverson-hal": "~2.0.0",
+    "traverson": "~2.0.0"
   },
   "authors": [
     "Joshua Bellamy-Henn <josh@psidox.com>"

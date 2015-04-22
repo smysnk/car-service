@@ -1,3 +1,7 @@
+server:
+#    context-path: /
+    servlet-path: /api
+
 spring:
 
 #    datasource:
