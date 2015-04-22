@@ -19,7 +19,7 @@
   "serviceOilChanged" : true,
   "serviceTireRotated" : true,
   "serviceSparkPlugsChanged" : true,
-  "cars" : {
+  "car" : {
     "make" : "Toyota",
     "model" : "Rav4",
     "type" : "Gas",
@@ -46,7 +46,7 @@
   "customerId" : 1,
   "firstName" : "Joshua",
   "lastName" : "Bellamy-Henn",
-  "cars" : [ {
+  "car" : [ {
     "make" : "Toyota",
     "model" : "Rav4",
     "type" : "Gas",
@@ -64,7 +64,7 @@
     "serviceOilChanged" : true,
     "serviceTireRotated" : true,
     "serviceSparkPlugsChanged" : true,
-    "cars" : {
+    "car" : {
       "make" : "Toyota",
       "model" : "Rav4",
       "type" : "Gas",

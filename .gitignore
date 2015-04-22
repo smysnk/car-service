@@ -1,4 +1,20 @@
+
+# Application
+frontend/app/**/*.js
+frontend/app/**/*.js.map
+
+# NPM / Gulp
+frontend/bower_components
+frontend/typings
+node_modules
+
+
+# Building Directories
+target/
+build/
+
+# Other
+.idea
 *.iml
 .idea
 .gradle
-build
