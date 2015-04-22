@@ -67,6 +67,19 @@ public class ServiceRecordServiceTest {
 
 	}
 
+
+	@Test
+	public void shouldAllowOilChangeForDiesel() throws Exception {
+
+		// Get a hybrid car
+		Car car = carRepository.findOne(2L);
+		assertEquals(car.getCarModel().getCarType().getName(), "Diesel");
+		assertEquals(car.getCarModel().getCarType().hasOil(), true);
+
+		serviceRecordService.addServiceRecord(1, car.getId(), 1000, true, false, false);
+
+	}
+
 	@Test
 	public void shouldAllowOilChangeForHybrid() throws Exception {
 
@@ -78,6 +91,7 @@ public class ServiceRecordServiceTest {
 		serviceRecordService.addServiceRecord(1, car.getId(), 1000, true, false, false);
 
 	}
+
 
 	@Test(expected = ExceptionCannotChangeOil.class)
 	public void shouldNotAllowOilChangeForElectric() throws Exception {
@@ -98,6 +112,18 @@ public class ServiceRecordServiceTest {
 		// Get a electric car
 		Car car = carRepository.findOne(1L);
 		assertEquals(car.getCarModel().getCarType().getName(), "Gas");
+		assertEquals(car.getCarModel().getCarType().hasSparkplugs(), true);
+
+		serviceRecordService.addServiceRecord(1, car.getId(), 1000, false, false, true);
+
+	}
+
+	@Test
+	public void shouldAllowSparkplugChangeForHybrid() throws Exception {
+
+		// Get a electric car
+		Car car = carRepository.findOne(3L);
+		assertEquals(car.getCarModel().getCarType().getName(), "Hybrid");
 		assertEquals(car.getCarModel().getCarType().hasSparkplugs(), true);
 
 		serviceRecordService.addServiceRecord(1, car.getId(), 1000, false, false, true);
