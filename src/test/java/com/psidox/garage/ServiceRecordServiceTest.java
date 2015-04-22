@@ -68,7 +68,7 @@ public class ServiceRecordServiceTest {
 
 	public void shouldAllowOilChangeForHybrid() throws Exception {
 
-		// Get a gas car
+		// Get a hybrid car
 		Car car = carRepository.findOne(3L);
 		assertEquals(car.getCarModel().getCarType().getName(), "Hybrid");
 		assertEquals(car.getCarModel().getCarType().hasOil(), true);
