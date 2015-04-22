@@ -17,19 +17,28 @@ public class ServiceRecord {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private long id;
 
+    @Column(nullable = false)
     private Date dateServiced;
+
+    @Column(nullable = false)
     private Integer odometerReading;
+
+    @Column(nullable = false)
     private Boolean serviceOilChanged = false;
+
+    @Column(nullable = false)
     private Boolean serviceTireRotated = false;
+
+    @Column(nullable = false)
     private Boolean serviceSparkPlugsChanged = false;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "car_id")
+    @JoinColumn(name = "car_id", nullable = false)
     @JsonIdentityReference(alwaysAsId = true)
     private Car car;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "customer_id")
+    @JoinColumn(name = "customer_id", nullable = false)
     @JsonIdentityReference(alwaysAsId = true)
     private Customer customer;
 
